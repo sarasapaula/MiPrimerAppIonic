@@ -1,11 +1,15 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonLabel, IonMenuButton, IonPage, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonImg } from '@ionic/react';
 import './Page.css';
+import { useRef } from 'react';
+import { calendar } from 'ionicons/icons';
+import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
+
 
 const Page: React.FC = () => {
 
-  const { name } = useParams<{ name: string; }>();
+
 
   return (
     <IonPage>
@@ -14,17 +18,19 @@ const Page: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{name}</IonTitle>
+          <IonTitle>Demo de componentes</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">{name}</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name={name} />
+      <IonContent>
+        <IonImg src='https://strapi.alanmontgomery.co.uk/uploads/Ionic_React_Onboarding_screens_ui_e018e954d9.png' />
+        <IonImg src='https://ionicframework.com/img/react/music-player-thumb.png' />
+        <IonText color ='primary'>
+          <h3>
+          En esta aplicacion podras ver varias implementaciones de componentes utiles para el desarrollo de aplicaciones IONIC-Reac
+          </h3>        
+        </IonText>
+        
       </IonContent>
     </IonPage>
   );
