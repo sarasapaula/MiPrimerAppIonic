@@ -1,0 +1,7 @@
+{
+  "name": "Mi_primer_app_Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
